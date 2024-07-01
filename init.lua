@@ -30,3 +30,5 @@ require("lazy").setup("plugins")
 --vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>bn', "<cmd>bnext<cr>") -- go back to previous buffer
 vim.keymap.set('n', '<leader>bp', "<cmd>bprev<cr>") -- go forward to next buffer
+vim.keymap.set('n', '<leader>bd', "<cmd>bdelete<cr>") -- go forward to next buffer
+vim.keymap.set('n', '<leader>.', "<cmd>e .<cr>") -- go forward to next buffer

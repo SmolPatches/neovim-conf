@@ -1,3 +1,0 @@
-return {
-  ' guess-indent.nvim'
-}
