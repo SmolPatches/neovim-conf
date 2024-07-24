@@ -9,6 +9,7 @@ return {
   keys = {
     {"<leader>ff","<cmd>Telescope find_files<cr>"},
     {"<leader>fg","<cmd>Telescope live_grep<cr>"},
+    {"<leader>ft","<cmd>Telescope git_files<cr>"},
     {"<leader>fb","<cmd>Telescope buffers<cr>"},
     {"<leader>fh","<cmd>Telescope help_tags<cr>"},
   }
