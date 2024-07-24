@@ -31,10 +31,12 @@ return {
         formatting = lsp_zero.cmp_format({details = true}),
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
+          ['<Tab>'] = cmp.mapping.complete(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true })
         }),
         snippet = {
           expand = function(args)
@@ -76,6 +78,8 @@ return {
       require('lspconfig').nil_ls.setup(lua_opts)
       require('lspconfig').zls.setup(lua_opts)
       require('lspconfig').yamlls.setup(lua_opts)
+      require('lspconfig').pyright.setup(lua_opts)
+      require('lspconfig').jsonls.setup(lua_opts)
     end
   }
 }
