@@ -23,14 +23,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 local builtin = require('telescope.builtin')
+function toggle_ro() -- toggle readonly mode
+  vim.o.readonly = not vim.o.readonly
+end
 -- key binds
 -- Note this makes load unlazy
 --local builtin = require('telescope.builtin')
---vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
---vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
---vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
---vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>bn', "<cmd>bnext<cr>") -- go back to previous buffer
 vim.keymap.set('n', '<leader>bp', "<cmd>bprev<cr>") -- go forward to next buffer
 vim.keymap.set('n', '<leader>bd', "<cmd>bdelete<cr>") -- go forward to next buffer
 vim.keymap.set('n', '<leader>.', "<cmd>e .<cr>") -- go forward to next buffer
+vim.keymap.set('n', '<leader>r', "<cmd>lua toggle_ro()<cr>") -- binding for toggle readonly mode
