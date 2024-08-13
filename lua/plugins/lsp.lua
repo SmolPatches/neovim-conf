@@ -54,6 +54,9 @@ return {
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
     },
+    keys = {
+      {"<leader>e","<cmd>:lua vim.diagnostic.open_float()<cr>"},
+    },
     config = function()
       -- This is where all the LSP shenanigans will live
       local lsp_zero = require('lsp-zero')
