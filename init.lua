@@ -23,6 +23,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 local builtin = require('telescope.builtin')
+local line = require('lualine').setup()
 function toggle_ro() -- toggle readonly mode
   vim.o.readonly = not vim.o.readonly
 end
