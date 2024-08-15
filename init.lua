@@ -2,6 +2,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.o.relativenumber = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 -- spacing
 vim.o.expandtab = true
 vim.o.smarttab = true
@@ -35,3 +37,5 @@ vim.keymap.set('n', '<leader>bp', "<cmd>bprev<cr>") -- go forward to next buffer
 vim.keymap.set('n', '<leader>bd', "<cmd>bdelete<cr>") -- go forward to next buffer
 vim.keymap.set('n', '<leader>.', "<cmd>e .<cr>") -- go forward to next buffer
 vim.keymap.set('n', '<leader>r', "<cmd>lua toggle_ro()<cr>") -- binding for toggle readonly mode
+vim.keymap.set('n', '<leader>q', "<cmd>enew<bar>bd #<cr>") -- binding for toggle readonly mode
+
