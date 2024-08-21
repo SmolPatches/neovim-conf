@@ -10,6 +10,7 @@ vim.o.smarttab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.opt.clipboard = 'unnamedplus' -- share clipboard with system
+vim.o.guicursor = 'a:blinkon100' -- make the cursor blink
 -- plugin manager (lazy)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
