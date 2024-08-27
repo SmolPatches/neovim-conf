@@ -75,22 +75,18 @@ return {
       ---
       -- (Optional) Configure lua language server for neovim
       local lua_opts  = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
       require('lspconfig').rust_analyzer.setup(lua_opts)
+      --require('lspconfig').rust_analyzer.setup({
+      --  settings = {
+      --    ['rust-analyzer'] = {
+      --      check = {
+      --        command = 'clippy';
+      --      }
+      --    }
+      --  }
+      --})
       require('lspconfig').gopls.setup(lua_opts)
-      require('lspconfig').pylsp.setup({
-        settings = {
-          on_attach = on_attach,
-          pylsp = {
-            plugins = {
-              flake8 = {
-                enabled = true,
-                maxLineLength = 119,
-              },
-            }
-          }
-        }
-      })
+      require('lspconfig').pylsp.setup(lua_opts)
       require('lspconfig').bashls.setup(lua_opts)
       require('lspconfig').clangd.setup(lua_opts)
       require('lspconfig').cmake.setup(lua_opts)
