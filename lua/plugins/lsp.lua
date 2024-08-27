@@ -71,20 +71,19 @@ return {
       function on_attach(client, bufnr)
         lsp_zero.default_keymaps({ buffer = bufnr })
       end
+      lsp_zero.use('rust_analyzer', {
+        settings = {
+          check = {
+            command = 'clippy';
+          }
+        }
+      })
       ---
       ---
       -- (Optional) Configure lua language server for neovim
-      local lua_opts  = lsp_zero.nvim_lua_ls()
+      local lua_opts = lsp_zero.nvim_lua_ls()
+      require('lspconfig').lua_ls.setup(lua_opts)
       require('lspconfig').rust_analyzer.setup(lua_opts)
-      --require('lspconfig').rust_analyzer.setup({
-      --  settings = {
-      --    ['rust-analyzer'] = {
-      --      check = {
-      --        command = 'clippy';
-      --      }
-      --    }
-      --  }
-      --})
       require('lspconfig').gopls.setup(lua_opts)
       require('lspconfig').pylsp.setup(lua_opts)
       require('lspconfig').bashls.setup(lua_opts)
